@@ -1,0 +1,8 @@
+main, body {
+    width: 100vw;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+}
