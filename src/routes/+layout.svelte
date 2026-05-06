@@ -12,7 +12,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>shroud.social</title>
+	<title>shroud.social | A privacy-first, decentralized home for your community</title>
+	<meta name="description" content="shroud.social, the next generation of private, open-source and decentralized group communication." />
 </svelte:head>
 
 <main>
