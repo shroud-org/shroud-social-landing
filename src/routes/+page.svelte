@@ -1,27 +1,28 @@
 <script>
-    import { Quote } from "@lucide/svelte";
+    import SubBrand from "$lib/assets/components/SubBrand.svelte";
+    import Brand from "$lib/assets/components/Brand.svelte";
+    import { ChevronDown } from "@lucide/svelte";
+    import { Check } from "@lucide/svelte";
 </script>
 
 <div class="container">
     <div class="hero">
         <div>
-            <h1>shroud.social is coming soon.</h1>
-            <h2>A new home for your community.</h2>
+            <div class="hero-title">
+                <Brand style="--brand-size: 96px;" />
+                <SubBrand variant="social" style="--brand-size: 64px; opacity: 75%" />
+            </div>
+            <h2>A new home for your community. Coming soon.</h2>
         </div>
-        <form
-                action="https://buttondown.com/api/emails/embed-subscribe/shroudsocial"
-                method="post"
-                class="embeddable-buttondown-form"
-        >
-            <h3>Sign up for the newsletter:</h3>
-            <input type="email" name="email" id="bd-email" placeholder="Enter your email" />
-            <input type="submit" value="Subscribe" />
-            <p>
-                <a href="https://buttondown.com/refer/shroudsocial" target="_blank" class="buttondown-link">
-                    Powered by Buttondown.
-                </a>
-            </p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/shroudsocial" method="post" class="embeddable-buttondown-form">
+            <h4>Sign up for the newsletter:</h4>
+            <div>
+                <input type="email" name="email" id="bd-email" placeholder="Enter your email" autocomplete="email" />
+                <button type="submit"><Check size={20}/></button>
+            </div>
+            <a href="https://buttondown.com/refer/shroudsocial" target="_blank" class="buttondown-link"> Powered by Buttondown.</a>
         </form>
+        <a href="#who" id="scroll-button"><ChevronDown size={48}/></a>
     </div>
     <div class="content">
         <div class="section" id="who">
@@ -50,7 +51,7 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
     .container {
         display: flex;
         flex-direction: column;
@@ -64,12 +65,70 @@
         flex-direction: column;
         gap: 64px;
         justify-content: center;
-    }
+        transform: translateX(-15vw);
 
-    .hero h1 {
-        font-size: 64px;
-        font-family: 'ZT Nature', sans-serif;
-        font-style: normal;
+        div {
+            .hero-title {
+                display: flex;
+                align-items: flex-end;
+                gap: 10px;
+            }
+
+            h2 {
+                opacity: 65%;
+            }
+        }
+
+        form {
+            div {
+                display: flex;
+                gap: 10px;
+            }
+
+            input[type="email"] {
+                height: 48px;
+                width: 256px;
+                padding: 12px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                box-sizing: border-box;
+            }
+
+            button {
+                height: 48px;
+                width: 48px;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: #45a049;
+                }
+            }
+
+            a.buttondown-link {
+                font-size: 12px;
+                text-decoration: none;
+                color: rgb(255 255 255 / 0.4);
+            }
+        }
+
+        a#scroll-button {
+            position:absolute;
+            bottom: 25px;
+            text-decoration: none;
+            color: #ffffff;
+
+            &:visited {
+              color: #ffffff;
+            }
+        }
     }
 
     .content {
@@ -83,40 +142,12 @@
         gap: 20px;
         box-sizing: border-box;
         padding: 50px;
-    }
 
-    .section {
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        width: 70vh;
-    }
-
-    input[type="email"] {
-        padding: 12px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        box-sizing: border-box;
-    }
-
-    input[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
-
-    a.buttondown-link {
-        text-decoration: none;
-        color: rgb(255 255 255 / 0.4);
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            width: 70vh;
+        }
     }
 </style>
