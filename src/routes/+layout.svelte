@@ -47,19 +47,19 @@
 			<nav class:open={navOpened}>
 				<ul>
 					<li class="nav-element">
-						<a href="#who" onclick={toggleNav}>Who</a>
+						<a href="/#who" onclick={toggleNav}>Who</a>
 					</li>
 					<li class="nav-element">
-						<a href="#what" onclick={toggleNav}>What</a>
+						<a href="/#what" onclick={toggleNav}>What</a>
 					</li>
 					<li class="nav-element">
-						<a href="#where" onclick={toggleNav}>Where</a>
+						<a href="/#where" onclick={toggleNav}>Where</a>
 					</li>
 					<li class="nav-element">
-						<a href="#when" onclick={toggleNav}>When</a>
+						<a href="/#when" onclick={toggleNav}>When</a>
 					</li>
 					<li class="nav-element">
-						<a href="#why" onclick={toggleNav}>Why</a>
+						<a href="/#why" onclick={toggleNav}>Why</a>
 					</li>
 				</ul>
 			</nav>

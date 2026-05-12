@@ -9,8 +9,8 @@
     <div class="hero">
         <div>
             <div class="hero-title">
-                <Brand style="--brand-size: 96px;" />
-                <SubBrand variant="social" style="--brand-size: 64px; opacity: 75%" />
+                <Brand />
+                <SubBrand variant="social" />
             </div>
             <h2>A new home for your community. Coming soon.</h2>
         </div>
@@ -52,6 +52,10 @@
 </div>
 
 <style lang="scss">
+    $small-screen: 700px;
+    $medium-screen: 900px;
+    $large-screen: 1200px;
+
     .container {
         display: flex;
         flex-direction: column;
@@ -59,7 +63,419 @@
         justify-content: center;
     }
 
-    .hero {
+    @media screen and (max-width: $small-screen) {
+      .hero {
+        padding: 16px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        justify-content: center;
+
+        div {
+          .hero-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            :global(.brand) {
+              --brand-size: 48px;
+            }
+
+            :global(.subbrand) {
+              --brand-size: 32px;
+              opacity: 75%
+            }
+          }
+
+          h2 {
+            opacity: 65%;
+          }
+        }
+
+        form {
+          div {
+            display: flex;
+            gap: 10px;
+          }
+
+          input[type="email"] {
+            height: 48px;
+            width: 256px;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+          }
+
+          button {
+            height: 48px;
+            width: 48px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+
+          a.buttondown-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255 255 255 / 0.4);
+          }
+        }
+
+        a#scroll-button {
+          position: absolute;
+          bottom: 25px;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:visited {
+            color: #ffffff;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgb(255 255 255 / 0.7);
+        color: #000000;
+        gap: 50px;
+        padding: 100px 0 100px 0;
+
+        .section {
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          width: 60vw;
+        }
+      }
+    }
+
+    @media screen and (min-width: $small-screen) {
+      .hero {
+        padding: 16px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        justify-content: center;
+
+        div {
+          .hero-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            :global(.brand) {
+              --brand-size: 96px;
+            }
+
+            :global(.subbrand) {
+              --brand-size: 48px;
+              opacity: 75%
+            }
+          }
+
+          h2 {
+            opacity: 65%;
+          }
+        }
+
+        form {
+          div {
+            display: flex;
+            gap: 10px;
+          }
+
+          input[type="email"] {
+            height: 48px;
+            width: 256px;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+          }
+
+          button {
+            height: 48px;
+            width: 48px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+
+          a.buttondown-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255 255 255 / 0.4);
+          }
+        }
+
+        a#scroll-button {
+          position: absolute;
+          bottom: 25px;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:visited {
+            color: #ffffff;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+        background: rgb(255 255 255 / 0.7);
+        color: #000000;
+        gap: 50px;
+        box-sizing: border-box;
+        padding: 100px 0 100px 0;
+
+        .section {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          width: 70vw;
+        }
+      }
+    }
+
+    @media screen and (min-width: $medium-screen) {
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        justify-content: center;
+        transform: translateX(-5vw);
+
+        div {
+          .hero-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            :global(.brand) {
+              --brand-size: 96px;
+            }
+
+            :global(.subbrand) {
+              --brand-size: 48px;
+              opacity: 75%
+            }
+          }
+
+          h2 {
+            opacity: 65%;
+          }
+        }
+
+        form {
+          div {
+            display: flex;
+            gap: 10px;
+          }
+
+          input[type="email"] {
+            height: 48px;
+            width: 256px;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+          }
+
+          button {
+            height: 48px;
+            width: 48px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+
+          a.buttondown-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255 255 255 / 0.4);
+          }
+        }
+
+        a#scroll-button {
+          position: absolute;
+          bottom: 25px;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:visited {
+            color: #ffffff;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+        background: rgb(255 255 255 / 0.7);
+        color: #000000;
+        gap: 50px;
+        box-sizing: border-box;
+        padding: 100px 0 100px 0;
+
+        .section {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          width: 70vw;
+        }
+      }
+    }
+
+    @media screen and (min-width: $medium-screen) {
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        justify-content: center;
+        transform: translateX(-5vw);
+
+        div {
+          .hero-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            :global(.brand) {
+              --brand-size: 96px;
+            }
+
+            :global(.subbrand) {
+              --brand-size: 48px;
+              opacity: 75%
+            }
+          }
+
+          h2 {
+            opacity: 65%;
+          }
+        }
+
+        form {
+          div {
+            display: flex;
+            gap: 10px;
+          }
+
+          input[type="email"] {
+            height: 48px;
+            width: 256px;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+          }
+
+          button {
+            height: 48px;
+            width: 48px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+
+          a.buttondown-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255 255 255 / 0.4);
+          }
+        }
+
+        a#scroll-button {
+          position: absolute;
+          bottom: 25px;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:visited {
+            color: #ffffff;
+          }
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+        background: rgb(255 255 255 / 0.7);
+        color: #000000;
+        gap: 50px;
+        box-sizing: border-box;
+        padding: 100px 0 100px 0;
+
+        .section {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          width: 70vw;
+        }
+      }
+    }
+
+    @media screen and (min-width: $large-screen) {
+      .hero {
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -68,70 +484,79 @@
         transform: translateX(-15vw);
 
         div {
-            .hero-title {
-                display: flex;
-                align-items: flex-end;
-                gap: 10px;
+          .hero-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            :global(.brand) {
+              --brand-size: 96px;
             }
 
-            h2 {
-                opacity: 65%;
+            :global(.subbrand) {
+              --brand-size: 64px;
+              opacity: 75%
             }
+          }
+
+          h2 {
+            opacity: 65%;
+          }
         }
 
         form {
-            div {
-                display: flex;
-                gap: 10px;
-            }
+          div {
+            display: flex;
+            gap: 10px;
+          }
 
-            input[type="email"] {
-                height: 48px;
-                width: 256px;
-                padding: 12px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 25px;
-                box-sizing: border-box;
-            }
+          input[type="email"] {
+            height: 48px;
+            width: 256px;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-sizing: border-box;
+          }
 
-            button {
-                height: 48px;
-                width: 48px;
-                background-color: #4CAF50;
-                color: white;
-                padding: 14px;
-                margin: 8px 0;
-                border: none;
-                border-radius: 25px;
-                cursor: pointer;
+          button {
+            height: 48px;
+            width: 48px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
 
-                &:hover {
-                  background-color: #45a049;
-                }
+            &:hover {
+              background-color: #45a049;
             }
+          }
 
-            a.buttondown-link {
-                font-size: 12px;
-                text-decoration: none;
-                color: rgb(255 255 255 / 0.4);
-            }
+          a.buttondown-link {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255 255 255 / 0.4);
+          }
         }
 
         a#scroll-button {
-            position:absolute;
-            bottom: 25px;
-            text-decoration: none;
+          position: absolute;
+          bottom: 25px;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:visited {
             color: #ffffff;
-
-            &:visited {
-              color: #ffffff;
-            }
+          }
         }
-    }
+      }
 
-    .content {
+      .content {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -139,15 +564,16 @@
         width: 100%;
         background: rgb(255 255 255 / 0.7);
         color: #000000;
-        gap: 20px;
+        gap: 50px;
         box-sizing: border-box;
-        padding: 50px;
+        padding: 100px 0 100px 0;
 
         .section {
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-            width: 70vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          width: 70vw;
         }
+      }
     }
 </style>
